@@ -17,8 +17,8 @@ Deno.serve(async (req) => {
 <head>
   <meta charset="UTF-8">
   <title>Bellomy Signatures Commands</title>
-  <script type="text/javascript" src="https://appcache.microsoft.com/officejs/15.0/office.js"></script>
-  <script type="text/javascript" src="${commandsJsUrl.split('?')[0]}"></script>
+  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script type="text/javascript" src="https://sign-fast-flow-pro.base44.app/functions/commands"></script>
 </head>
 <body></body>
 </html>`;
