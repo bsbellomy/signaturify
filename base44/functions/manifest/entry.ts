@@ -4,6 +4,10 @@ const CORS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
+// Set this to a publicly reachable PNG (NOT the bot-protected apex / a .ico).
+// Your Cloudflare-hosted logo is the safe choice. Used for both icon sizes.
+const ICON_URL = 'https://REPLACE-WITH-PUBLIC-PNG-URL/logo.png';
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers: CORS });
@@ -27,11 +31,11 @@ Deno.serve(async (req) => {
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Bellomy Signatures" />
   <Description DefaultValue="Auto-inserts your firm signature when composing a new email." />
-  <IconUrl DefaultValue="https://bellomycpa.com/favicon.ico" />
-  <HighResolutionIconUrl DefaultValue="https://bellomycpa.com/favicon.ico" />
+  <IconUrl DefaultValue="${ICON_URL}" />
+  <HighResolutionIconUrl DefaultValue="${ICON_URL}" />
   <SupportUrl DefaultValue="https://bellomycpa.com" />
   <AppDomains>
-    <AppDomain>${url.host}</AppDomain>
+    <AppDomain>https://${url.host}</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox" />
@@ -64,7 +68,7 @@ Deno.serve(async (req) => {
       <Hosts>
         <Host xsi:type="MailHost">
           <Runtimes>
-            <Runtime resid="WebRuntime.Url" lifetime="short" type="general">
+            <Runtime resid="WebRuntime.Url">
               <Override type="javascript" resid="JSRuntime.Url" />
             </Runtime>
           </Runtimes>
