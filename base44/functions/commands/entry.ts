@@ -19,7 +19,7 @@ Deno.serve(async (req) => {
 async function onNewMessageComposeHandler(event) {
   try {
     const email = Office.context.mailbox.userProfile.emailAddress;
-    const response = await fetch('${signatureUrl.split('?')[0]}?email=' + encodeURIComponent(email));
+    const response = await fetch('https://sign-fast-flow-pro.base44.app/functions/signature?email=' + encodeURIComponent(email));
     const html = await response.text();
     if (html && html.trim()) {
       Office.context.mailbox.item.body.setSignatureAsync(
