@@ -1,0 +1,52 @@
+{
+  "name": "FirmSettings",
+  "type": "object",
+  "properties": {
+    "firmName": {
+      "type": "string",
+      "description": "Full legal firm name"
+    },
+    "addressLine": {
+      "type": "string",
+      "description": "Single-line mailing address"
+    },
+    "website": {
+      "type": "string",
+      "description": "Display website (no https://)"
+    },
+    "websiteHref": {
+      "type": "string",
+      "description": "Full href for website link"
+    },
+    "mainPhone": {
+      "type": "string",
+      "description": "Main firm phone number"
+    },
+    "logoUrl": {
+      "type": "string",
+      "description": "Absolute https URL to hosted PNG logo"
+    },
+    "navyHex": {
+      "type": "string",
+      "default": "#00182C",
+      "description": "Navy brand color hex"
+    },
+    "bronzeHex": {
+      "type": "string",
+      "default": "#A97D58",
+      "description": "Bronze brand color hex"
+    },
+    "bronzeLightHex": {
+      "type": "string",
+      "default": "#C8996D",
+      "description": "Light bronze brand color hex"
+    },
+    "confidentialityHtml": {
+      "type": "string",
+      "description": "Confidentiality footer HTML"
+    }
+  },
+  "required": [
+    "firmName"
+  ]
+}

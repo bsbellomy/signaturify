@@ -1,0 +1,47 @@
+{
+  "name": "StaffSignature",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "M365 mailbox address \u2014 used as lookup key"
+    },
+    "fullName": {
+      "type": "string",
+      "description": "Full display name"
+    },
+    "credentials": {
+      "type": "string",
+      "description": "Professional credentials e.g. CPA, EA"
+    },
+    "title": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "telDisplay": {
+      "type": "string",
+      "description": "Phone number display text"
+    },
+    "telHref": {
+      "type": "string",
+      "description": "Phone number for tel: link (digits only)"
+    },
+    "emailDisplay": {
+      "type": "string",
+      "description": "Email display text"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether signature is active"
+    },
+    "customHtmlOverride": {
+      "type": "string",
+      "description": "If non-empty, returned verbatim instead of rendered template"
+    }
+  },
+  "required": [
+    "email",
+    "fullName"
+  ]
+}
