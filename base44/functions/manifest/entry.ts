@@ -4,19 +4,16 @@ const CORS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-// Set this to a publicly reachable PNG (NOT the bot-protected apex / a .ico).
-// Your Cloudflare-hosted logo is the safe choice. Used for both icon sizes.
-const ICON_URL = 'https://REPLACE-WITH-PUBLIC-PNG-URL/logo.png';
+const APP = 'https://sign-fast-flow-pro.base44.app';
+const ICON_URL = 'https://REPLACE-WITH-YOUR-WORKING-LOGO-URL.png'; // use the same logo URL your signature renders
 
-Deno.serve(async (req) => {
+Deno.serve((req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers: CORS });
   }
 
-  const url = new URL(req.url);
-  const base = url.href.replace(/\/manifest(\?.*)?$/, '');
-  const commandsHtmlUrl = `${base}/commandsHtml`;
-  const commandsJsUrl = `${base}/commands`;
+  const commandsHtmlUrl = `${APP}/functions/commandsHtml`;
+  const commandsJsUrl = `${APP}/functions/commands`;
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp
@@ -35,7 +32,7 @@ Deno.serve(async (req) => {
   <HighResolutionIconUrl DefaultValue="${ICON_URL}" />
   <SupportUrl DefaultValue="https://bellomycpa.com" />
   <AppDomains>
-    <AppDomain>https://${url.host}</AppDomain>
+    <AppDomain>${APP}</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox" />
