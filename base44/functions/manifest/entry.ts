@@ -5,7 +5,7 @@ const CORS = {
 };
 
 const APP = 'https://sign-fast-flow-pro.base44.app';
-const ICON_URL = 'https://REPLACE-WITH-YOUR-WORKING-LOGO-URL.png'; // use the same logo URL your signature renders
+const ICON_URL = 'https://sign-fast-flow-pro.base44.app/favicon.svg'; // use the same logo URL your signature renders
 
 Deno.serve((req) => {
   if (req.method === 'OPTIONS') {
