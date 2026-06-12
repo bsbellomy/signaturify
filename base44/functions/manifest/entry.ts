@@ -51,7 +51,7 @@ Deno.serve((req) => {
     </Form>
   </FormSettings>
   <Permissions>ReadWriteItem</Permissions>
-  <Rule xsi:type="RuleCollection" Mode="Or">
+ <Rule xsi:type="RuleCollection" Mode="Or">
   <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
   <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
 </Rule>
