@@ -52,8 +52,9 @@ Deno.serve((req) => {
   </FormSettings>
   <Permissions>ReadWriteItem</Permissions>
   <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
-  </Rule>
+  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
+  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+</Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
