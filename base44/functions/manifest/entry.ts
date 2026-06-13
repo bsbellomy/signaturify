@@ -5,6 +5,7 @@ const CORS = {
 };
 
 const APP = 'https://sign-fast-flow-pro.base44.app';
+const PAGES = 'https://bsbellomy.github.io/signaturify';
 const ICON_URL = 'https://base44.app/api/apps/6a17d1588208866fd0d3e8f4/files/mp/public/6a17d1588208866fd0d3e8f4/295ae3b28_ba-mark-dark.png'; // use the same logo URL your signature renders
 
 Deno.serve((req) => {
@@ -12,7 +13,7 @@ Deno.serve((req) => {
     return new Response(null, { status: 204, headers: CORS });
   }
 
-  const commandsHtmlUrl = `${APP}/functions/commandsHtml`;
+  const commandsHtmlUrl = `${PAGES}/commands.html`;
   const commandsJsUrl = `${APP}/functions/commands`;
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -33,6 +34,7 @@ Deno.serve((req) => {
   <SupportUrl DefaultValue="https://bellomycpa.com" />
   <AppDomains>
     <AppDomain>${APP}</AppDomain>
+    <AppDomain>https://bsbellomy.github.io</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox" />
