@@ -12,19 +12,19 @@ Deno.serve(async (req) => {
   const url = new URL(req.url);
   const commandsJsUrl = url.href.replace(/\/commandsHtml(\?.*)?$/, '/commands');
 
-  const html = `<!DOCTYPE html>
-<html>
+  const html = `<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Bellomy Signatures Commands</title>
   <script type="text/javascript">
     function loadScript(src, onSuccess, onFail, attempt) {
       attempt = attempt || 1;
       var script = document.createElement('script');
-      script.src = src + (src.indexOf('?') >= 0 ? '&' : '?') + 'retry=' + attempt;
+      script.src = src + (src.indexOf('?') &gt;= 0 ? '&amp;' : '?') + 'retry=' + attempt;
       script.onload = onSuccess;
       script.onerror = function () {
-        if (attempt < 3) {
+        if (attempt &lt; 3) {
           setTimeout(function () {
             loadScript(src, onSuccess, onFail, attempt + 1);
           }, 1500);
@@ -51,8 +51,7 @@ Deno.serve(async (req) => {
     status: 200,
     headers: {
       ...CORS,
-      'Content-Type': 'text/html; charset=utf-8',
-      'Content-Security-Policy': "script-src 'self' 'unsafe-inline' https://appsforoffice.microsoft.com https://sign-fast-flow-pro.base44.app; object-src 'none';",
+      'Content-Type': 'application/xhtml+xml; charset=utf-8',
     },
   });
 });
