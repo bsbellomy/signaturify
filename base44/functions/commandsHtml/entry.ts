@@ -49,6 +49,10 @@ Deno.serve(async (req) => {
 
   return new Response(html, {
     status: 200,
-    headers: { ...CORS, 'Content-Type': 'text/html; charset=utf-8' },
+    headers: {
+      ...CORS,
+      'Content-Type': 'text/html; charset=utf-8',
+      'Content-Security-Policy': "script-src 'self' 'unsafe-inline' https://appsforoffice.microsoft.com https://sign-fast-flow-pro.base44.app; object-src 'none';",
+    },
   });
 });
